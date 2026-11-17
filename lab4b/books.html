@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Books</title></head>
+<body>
+  <p id="first"></p>
+  <p id="second"></p>
+  <div id="genres"></div>
+  <p id="error" role="alert"></p>
+
+  <script>
+    async function loadBooks() {
+      try {
+        const response = await fetch("books.json");
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        const data = await response.json();
+        const [b1, b2] = data.books;
+
+        document.getElementById("first").textContent = "First book: " + b1.title;
+        document.getElementById("second").textContent = "Author of second book: " + b2.author;
+
+        const box = document.getElementById("genres");
+        data.books.forEach(book => {
+          const p = document.createElement("p");
+          p.textContent = book.title + " — " + book.genres.join(", ");
+          box.appendChild(p);
+        });
+      } catch (err) {
+        document.getElementById("error").textContent =
+          "Sorry, the book data could not be loaded.";
+      }
+    }
+    loadBooks();
+  </script>
+</body>
+</html>
