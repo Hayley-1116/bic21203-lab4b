@@ -39,7 +39,3 @@ Error handling (when `books.json` cannot be loaded):
 ### Q3 – jquery-dom.html
 ![Q3 output]<img width="248" height="284" alt="Screenshot 2026-11-17 110728" src="https://github.com/user-attachments/assets/803d7755-91ba-41dd-bc66-2168e0447d5b" />
 <img width="422" height="216" alt="Screenshot 2026-11-17 110734" src="https://github.com/user-attachments/assets/b388d1ce-9af9-404b-80b5-98c63f1f41f8" />
-
-## Native JavaScript vs jQuery
-- **Advantage of native JavaScript:** no extra library to download, so the page loads faster and has fewer dependencies.
-- **Why a project may still use jQuery:** older projects and plugins already depend on it, and rewriting them would cost more than it gains.
